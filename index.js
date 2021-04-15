@@ -26,8 +26,8 @@ if (process.env.NODE_ENV != 'test')
 	(async () => {
 		await listAuthenicatedUserRepos();
 		await listBranches(userId, "HW4-345");
-		await createRepo(userId,newrepo);
-		await createIssue(userId, repo, issue);
+		// await createRepo(userId,newrepo);
+		// await createIssue(userId, repo, issue);
 		await enableWikiSupport(userId,repo);
 
 	})()
@@ -52,7 +52,7 @@ async function getUser()
 	let options = getDefaultOptions("/user", "GET");
 
 	// Send a http request to url and specify a callback that will be called upon its return.
-	return new Promise(function(resolve, reject)
+	return new Promise(function(resolve)
 	{
 		request(options, function (error, response, body) {
 
