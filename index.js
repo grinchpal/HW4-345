@@ -70,7 +70,7 @@ function listAuthenicatedUserRepos()
 	{
 		request(options, function (error, response, body) 
 		{
-			if( error )
+			if(error)
 			{
 				console.log( chalk.red( error ));
 				reject(error);
@@ -78,14 +78,14 @@ function listAuthenicatedUserRepos()
 			}
 
 			var obj = JSON.parse(body);
-			for( var i = 0; i < obj.length; i++ )
+			for(var i = 0; i < obj.length; i++)
 			{
 				var name = obj[i].name;
 				console.log( name );
 			}
 
 			// Return object for people calling our method.
-			resolve( obj );
+			resolve(obj);
 		});
 	});
 
@@ -100,9 +100,9 @@ async function listBranches(owner,repo)
 	return new Promise(function(resolve, reject)
 	{
 		request(options, function (error, response, body) {
-			if( error )
+			if(error)
 			{
-				console.log( chalk.red( error ));
+				console.log( chalk.red(error));
 				reject(error);
 				return; // Terminate execution.
 			}
@@ -114,7 +114,6 @@ async function listBranches(owner,repo)
 	});
 }
 
-//In line 128 and 152 I deleted the last parameter 'body'. If anything happens you can add it back.
 
 // 2. Write code to create a new repo
 async function createRepo(owner,repo)
@@ -127,14 +126,14 @@ async function createRepo(owner,repo)
 	{
 		request(options, function (error, response, body) {
 
-			if( error )
+			if(error)
 			{
-				console.log( chalk.red( error ));
+				console.log( chalk.red(error));
 				reject(error);
 				return; // Terminate execution.
 			}
 
-			resolve( response.statusCode );
+			resolve(response.statusCode);
 
 		});
 	});
@@ -151,14 +150,14 @@ async function createIssue(owner,repo, issueName, issueBody)
 	{
 		request(options, function (error, response, body) {
 
-			if( error )
+			if(error)
 			{
-				console.log( chalk.red( error ));
+				console.log(chalk.red(error));
 				reject(error);
 				return; // Terminate execution.
 			}
 
-			resolve( response.statusCode );
+			resolve(response.statusCode);
 
 		});
 	});
@@ -175,13 +174,13 @@ async function enableWikiSupport(owner,repo)
 	{
 		request(options, function (error, response, body) {
 
-			if( error )
+			if(error)
 			{
 				console.log( chalk.red( error ));
 				reject(error);
 				return; // Terminate execution.
 			}
-			resolve( JSON.parse(body) );
+			resolve(JSON.parse(body));
 		});
 	});	
 }
