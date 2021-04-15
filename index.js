@@ -114,7 +114,7 @@ async function listBranches(owner,repo)
 	});
 }
 
-//In line 126 and 150, I deleted the last parameter 'body'. If anything happens you can add it back.
+//In line 128 and 152 I deleted the last parameter 'body'. If anything happens you can add it back.
 
 // 2. Write code to create a new repo
 async function createRepo(owner,repo)
@@ -125,7 +125,7 @@ async function createRepo(owner,repo)
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
 	{
-		request(options, function (error, response) {
+		request(options, function (error, response, body) {
 
 			if( error )
 			{
@@ -149,7 +149,7 @@ async function createIssue(owner,repo, issueName, issueBody)
 	// Send a http request to url and specify a callback that will be called upon its return.
 	return new Promise(function(resolve, reject)
 	{
-		request(options, function (error, response) {
+		request(options, function (error, response, body) {
 
 			if( error )
 			{
